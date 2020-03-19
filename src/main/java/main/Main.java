@@ -13,22 +13,22 @@ public class Main {
 
 
 	public static void main(String[] args) {
-		Main main = new Main();
-		main.saveUser(new User("pera", "peric"));
-
-	}
-
-	
-	
-
-
-	private void saveUser(User user) {
 		BeanFactory factory = new AnnotationConfigApplicationContext(MyBeanConfig.class);
 		UserService userService = factory.getBean("userService", UserService.class);
-		userService.save(user);
-		
+		userService.save(new User("pera", "peric"));
+
 	}
 
+	
+	
+
+
+
+
+
+
+
+	
 
 
 }
